@@ -1,0 +1,40 @@
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-sm-12"> 
+  <center><h3>Update Participant Info</h3></center>
+    <form id="updateMemberForm" action="/member/{{id}}/update?_method=PUT" method="POST">
+
+            <div class="form-group col-md-12">
+                <label for="Name"><i class="text-danger mr-1">*</i>Name</label>
+                <input type="text" class="form-control form-control-sm" name="Name" id="Name" value="{{Name}}" required="required" data-error="Name is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+            <div class="form-group col-md-12">
+                <label for="TeamName"><i class="text-danger mr-1">*</i>Team Name</label>
+                <input type="text" class="form-control form-control-sm" name="TeamName" id="TeamName" value="{{TeamName}}" required="required" data-error="Team Name is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+            <div class="form-group col-md-12">
+                <label for="EmailAddress"><i class="text-danger mr-1">*</i>Email Address</label>
+                <input type="text" class="form-control form-control-sm" name="EmailAddress" id="EmailAddress" value="{{EmailAddress}}" required="required" data-error="Email Address is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+                <div class="form-group col-md-12">
+                <label for="PhoneNumber"><i class="text-danger mr-1">*</i>Phone Number</label>
+                <input type="text" class="form-control form-control-sm" name="PhoneNumber" id="PhoneNumber" value={{PhoneNumber}} required="required" data-error="Phone Number is required.">
+                <div class="help-block with-errors"></div>
+              </div>
+
+                <div class="form-group col-md-12">
+                      <label for="Amount"><i class="text-danger mr-1">*</i>Amount</label>
+                        <select class="form-control form-control-sm" name="Amount" id="Amount">
+                          <option selected value="25">$25 (1 Team Member)</option>
+                          <option value="50">$50 (2 Member Team)</option>
+                        </select>
+                      <div class="help-block with-errors"></div>
+                </div>
+
+              <a href="/member/{{id}}/" ><button type="button" class="btn btn-sm btn-danger float-right mr-3">Cancel</button></a>
+              <button type="submit" class="btn btn-sm btn-secondary float-right mr-1">Update</button>            
+    </form>
+</div>
+</div>
