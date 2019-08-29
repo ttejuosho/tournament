@@ -1,3 +1,7 @@
 .buttons-html5{
     margin-right: 0.5em;
 }
+
+#searchButton{ 
+    color: white;
+}
