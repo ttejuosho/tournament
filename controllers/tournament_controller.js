@@ -2,6 +2,15 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 
+function formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      return match[1] + '-' + match[2] + '-' + match[3]
+    }
+    return null
+  }
+
 router.get('/', (req,res) => {
     res.redirect('/index');
 });
@@ -26,12 +35,14 @@ router.post('/member/new', (req,res) => {
             Name: req.body.Name
         }
     }).then((dbTeamMember) => {
+        var formattedPhoneNumber = formatPhoneNumber(req.body.PhoneNumber);
+        console.log(formattedPhoneNumber);
         if (dbTeamMember == null){
             db.TeamMember.create({
                 Name: req.body.Name,
                 TeamName: req.body.TeamName,
                 EmailAddress: req.body.EmailAddress,
-                PhoneNumber: req.body.PhoneNumber,
+                PhoneNumber: formatPhoneNumber(req.body.PhoneNumber),
                 Amount: req.body.Amount
             }).then((dbTeamMember) => {
                 return res.render("added", dbTeamMember);
