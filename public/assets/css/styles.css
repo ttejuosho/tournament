@@ -1,7 +1,21 @@
-.buttons-html5{
+.buttons-html5 {
     margin-right: 0.5em;
 }
 
-#searchButton{ 
+#searchButton {
     color: white;
+}
+
+.error {
+    color: red;
+    font-size: 80%;
+    font-style: oblique;
+}
+
+#TeamNameDiv .selectize-input {
+    padding: 0px 2px !important;
+    margin: -3px 0px;
+    border: none !important;
+    box-shadow: unset !important;
+    -webkit-box-shadow: unset !important;
 }
