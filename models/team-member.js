@@ -28,9 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         Amount: {
           type: DataTypes.STRING,
           allowNull: false,
-          validate: {
-            len: [1]
-          }
+          defaultValue: 0
         }
     });
     return TeamMember;
