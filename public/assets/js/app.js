@@ -144,28 +144,43 @@ $(document).ready(function() {
 
     $('#teamMember').validate({
         rules: {
-            Name: {
-                required: true,
-                normalizer: function(value) { return $.trim(value); }
-            },
             TeamName: {
                 required: true,
                 normalizer: function(value) { return $.trim(value); }
             },
-            EmailAddress: {
+            Name1: {
                 required: true,
                 normalizer: function(value) { return $.trim(value); }
             },
-            PhoneNumber: {
+            EmailAddress1: {
+                required: true,
+                normalizer: function(value) { return $.trim(value); }
+            },
+            PhoneNumber1: {
+                required: true,
+                normalizer: function(value) { return $.trim(value); }
+            },
+            Name2: {
+                required: true,
+                normalizer: function(value) { return $.trim(value); }
+            },
+            EmailAddress2: {
+                required: true,
+                normalizer: function(value) { return $.trim(value); }
+            },
+            PhoneNumber2: {
                 required: true,
                 normalizer: function(value) { return $.trim(value); }
             },
         },
         messages: {
-            Name: "We need your name",
             TeamName: "To which Team do you belong again ?",
-            EmailAddress: "Because we might need to reach you via email",
-            PhoneNumber: "Buddha prefers phone calls, sorry"
+            Name1: "We need your name",
+            EmailAddress1: "Because we might need to reach you via email",
+            PhoneNumber1: "Buddha prefers phone calls, sorry",
+            Name2: "We need the other team member's name",
+            EmailAddress2: "Team Member's Email is required",
+            PhoneNumber2: "If youre not available we'll call this number",
         },
         ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input'
     });
