@@ -48,7 +48,7 @@ router.post('/member/new', (req, res) => {
                 db.TeamMember.create({
                     Name: req.body.Name2,
                     TeamName: req.body.TeamName,
-                    EmailAddress: req.body.EmailAddress2,
+                    EmailAddress: (req.body.EmailAddress2 !== undefined ? req.body.EmailAddress2 : ''),
                     PhoneNumber: formatPhoneNumber(req.body.PhoneNumber2),
                     Amount: req.body.Amount
                 });
