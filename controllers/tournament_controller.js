@@ -12,35 +12,53 @@ function formatPhoneNumber(phoneNumberString) {
 }
 
 router.get('/', (req, res) => {
-    res.redirect('/index');
+    res.render('landing');
 });
 
 router.get('/index', (req, res) => {
-    return res.render("index");
+    return res.render("index", {layout: 'mainx'});
 });
 
 router.get('/admin', (req, res) => {
     db.TeamMember.findAll({})
         .then((dbTeamMember) => {
             var hbsObject = {
-                teamMember: dbTeamMember
+                teamMember: dbTeamMember,
+                layout: 'mainx'
             };
             return res.render("admin", hbsObject);
         });
 });
 
 router.post('/member/new', (req, res) => {
+    console.log("NEW MEMBER");
     db.TeamMember.findOne({
         where: {
-            Name: req.body.Name
+            Name: req.body.Name1
         }
+    }).then((dbTeamMember)=>{
+    if (dbTeamMember == null) {
+        db.TeamMember.findOne({
+            where: {
+                Name: req.body.Name2
+            }
     }).then((dbTeamMember) => {
         if (dbTeamMember == null) {
+            if(req.body.Name2.length > 0){
+                db.TeamMember.create({
+                    Name: req.body.Name2,
+                    TeamName: req.body.TeamName,
+                    EmailAddress: req.body.EmailAddress2,
+                    PhoneNumber: formatPhoneNumber(req.body.PhoneNumber2),
+                    Amount: req.body.Amount
+                });
+            }
+
             db.TeamMember.create({
-                Name: req.body.Name,
+                Name: req.body.Name1,
                 TeamName: req.body.TeamName,
-                EmailAddress: req.body.EmailAddress,
-                PhoneNumber: formatPhoneNumber(req.body.PhoneNumber),
+                EmailAddress: req.body.EmailAddress1,
+                PhoneNumber: formatPhoneNumber(req.body.PhoneNumber1),
                 Amount: req.body.Amount
             }).then((dbTeamMember) => {
                 return res.render("added", dbTeamMember);
@@ -51,14 +69,17 @@ router.post('/member/new', (req, res) => {
             var err = {
                 error: dbTeamMember.Name.toUpperCase() + " already exists in the database"
             }
-            res.render("index", err);
+            res.render("landing", err);
         }
     });
+}
+});
 });
 
 router.get('/member/:id/update', (req, res) => {
     db.TeamMember.findByPk(req.params.id)
         .then((dbTeamMember) => {
+            dbTeamMember.dataValues['layout'] = 'mainx';
             res.render('update', dbTeamMember.dataValues);
         }).catch((err) => {
             res.render('error', err);
@@ -79,7 +100,7 @@ router.put('/member/:id/update', (req, res) => {
             id: req.params.id
         }
     }).then((dbTeamMember) => {
-        res.redirect('/admin');
+        res.redirect('/admin', { layout: 'mainx'});
     }).catch((err) => {
         res.render('error', err);
     });
@@ -103,6 +124,7 @@ router.get('/member/:id/delete', (req, res) => {
 router.get('/member/:id', (req, res) => {
     db.TeamMember.findByPk(req.params.id)
         .then((dbTeamMember) => {
+            dbTeamMember.dataValues['layout'] = 'mainx';
             res.render('view', dbTeamMember.dataValues);
         }).catch((err) => {
             res.render('error', err);

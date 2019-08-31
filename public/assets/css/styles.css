@@ -19,3 +19,14 @@
     box-shadow: unset !important;
     -webkit-box-shadow: unset !important;
 }
+
+header {
+    background-image: url("../images/bidwhist.png");
+    background-position: center;
+    background-size: auto;
+}
+
+.selectize-dropdown-content{
+    background-color: #433c5d;
+    color: white;
+}

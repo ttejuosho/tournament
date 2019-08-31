@@ -1,0 +1,188 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Creative - Start Bootstrap Theme</title>
+
+  <!-- Font Awesome Icons -->
+  <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/assets/css/creative.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Triple Deuces</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> --}}
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <h1 class="text-uppercase text-white font-weight-bold">Triple Deuces 1st Annual Bid Whist Tournament</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5">Taking place on Friday, September 27, 2019 at The Terrace Inn Lounge, 630 Gardner Street, Joliet, IL, 60433.</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="page-section bg-primary about" id="about" style="height:600px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="text-white mt-0">About The Tournament</h2>
+          <hr class="divider light my-4">
+          <p class="text-white-50 mb-4">
+            Have fun at our 1st Bid Whist Annual Tournament. Seats are $25 per person ($50 per team) and is non-refundable. You can click below to register. Please note that online registration ends <strong>September 22nd, 2019</strong>. Registration at the gates will be <strong>$30/Participant</strong> ($60 per team).
+            </p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#register">Register!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section id="register">
+    <div class="row justify-content-center pt-4 jumbotron">
+      <div class="col-lg-8 col-sm-10">
+                <h2 class="mt-0 text-center">Registration</h2>
+                <hr class="divider my-4">
+      </div>
+
+      <div class="col-lg-6 col-sm-10">
+        <form id="teamMember" action="/member/new" method="POST">
+          <div class="messages ml-3 text-danger font-weight-bold">{{error}}</div>
+          <div class="controls">
+              <div class="form-group col-md-12">
+                <label for="Amount"><i class="text-danger mr-1">*</i>Amount</label>
+                  <select class="form-control form-control-sm" name="Amount" id="Amount">
+                    <option selected value="25">$25 (1 Team Member)</option>
+                    <option value="50">$50 (2 Member Team)</option>
+                </select>
+              </div>
+            <div class="form-group col-md-12" id="TeamNameDiv">
+                <label for="TeamName"><i class="text-danger mr-1">*</i>Team Name</label>
+                <input type="text" class="form-control form-control-sm" name="TeamName" id="TeamName" placeholder="Team Name">
+            </div>
+              <div class="form-group col-md-12">
+                <label for="Name"><i class="text-danger mr-1">*</i>Name</label>
+                <input type="text" class="form-control form-control-sm" name="Name1" id="Name1" placeholder="First & Last Name">
+                <div class="help-block with-errors"></div>
+              </div>
+            <div class="form-group col-md-12">
+                <label for="EmailAddress"><i class="text-danger mr-1">*</i>Email Address</label>
+                <input type="text" class="form-control form-control-sm" name="EmailAddress1" id="EmailAddress1" placeholder="Email Address">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="PhoneNumber"><i class="text-danger mr-1">*</i>Phone Number</label>
+              <input type="text" class="form-control form-control-sm" name="PhoneNumber1" id="PhoneNumber1" placeholder="Phone Number">
+            </div>
+            <div class="NewTeamMember d-none">
+                <div class="form-group col-md-12">
+                    <label for="Name2"><i class="text-danger mr-1">*</i>Team Member's Name</label>
+                    <input type="text" class="form-control form-control-sm" name="Name2" id="Name2" placeholder="Team Member's First & Last Names">
+                  </div>
+                <div class="form-group col-md-12">
+                    <label for="EmailAddress"><i class="text-danger mr-1">*</i>Team Member's Email Address</label>
+                    <input type="text" class="form-control form-control-sm" name="EmailAddress2" id="EmailAddress2" placeholder="Team Member's Email Address">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="PhoneNumber"><i class="text-danger mr-1">*</i>Team Member's Phone Number</label>
+                  <input type="text" class="form-control form-control-sm" name="PhoneNumber2" id="PhoneNumber2" placeholder="Team Member's Phone Number">
+                </div>
+            </div>
+          <div class="row justify-content-center m-5">
+            <button type="submit" class="col-md-4 btn btn-secondary btn-sm">Submit</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Need More Information ?</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">If you have any questions or concerns regarding Triple Deuces or the Bid Whist Tournament, let us know.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (815) 761-3791</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:harris621@aol.com">harris621@aol.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {{!-- <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Triple Deuces</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/assets/js/creative.min.js"></script>
+
+</body>
+
+</html> --}}

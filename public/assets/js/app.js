@@ -46,7 +46,10 @@ $(document).ready(function() {
                     },
                     {
                         data: 'PhoneNumber',
-                        className: 'PhoneNumber text-center'
+                        className: 'PhoneNumber text-center',
+                        render: function(data, type, row, meta) {
+                            return '<a href="tel:' + data + '">' + data + '</a>';
+                        }
                     },
                     {
                         data: 'Amount',
@@ -165,5 +168,14 @@ $(document).ready(function() {
             PhoneNumber: "Buddha prefers phone calls, sorry"
         },
         ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input'
+    });
+
+    $('select[name="Amount"]').on('change', function() {
+        if($(this).val() == "50"){
+            $('.NewTeamMember').toggleClass('d-none');
+        } else {
+            $('.NewTeamMember').addClass('d-none');
+        }
+
     });
 });
