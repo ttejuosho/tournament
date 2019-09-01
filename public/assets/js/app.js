@@ -32,6 +32,13 @@ $(document).ready(function() {
                         }
                     },
                     {
+                        data: 'PhoneNumber',
+                        className: 'PhoneNumber text-center',
+                        render: function(data, type, row, meta) {
+                            return '<a href="tel:' + data + '">' + data + '</a>';
+                        }
+                    },
+                    {
                         data: 'TeamName',
                         className: 'TeamName text-center',
                         visible: false,
@@ -42,13 +49,6 @@ $(document).ready(function() {
                         className: 'EmailAddress text-center',
                         render: function(data, type, row, meta) {
                             return '<a href="mailto:' + data + '">' + data + '</a>';
-                        }
-                    },
-                    {
-                        data: 'PhoneNumber',
-                        className: 'PhoneNumber text-center',
-                        render: function(data, type, row, meta) {
-                            return '<a href="tel:' + data + '">' + data + '</a>';
                         }
                     },
                     {
@@ -173,9 +173,9 @@ $(document).ready(function() {
             TeamName: "To which Team do you belong again ?",
             Name1: "We need your name",
             EmailAddress1: "Because we might need to reach you via email",
-            PhoneNumber1: "Buddha prefers phone calls, sorry",
+            PhoneNumber1: "Phone Number is required",
             Name2: "We need the other team member's name",
-            PhoneNumber2: "If youre not available we'll call this number",
+            PhoneNumber2: "If you're not available we'll call this number",
         },
         ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input'
     });

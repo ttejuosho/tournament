@@ -93,13 +93,12 @@ router.put('/member/:id/update', (req, res) => {
         PhoneNumber: req.body.PhoneNumber,
         Amount: req.body.Amount
     };
-
     db.TeamMember.update(dbTeamMember, {
         where: {
             id: req.params.id
         }
     }).then((dbTeamMember) => {
-        res.redirect('/admin', { layout: 'mainx'});
+        res.redirect('/admin');
     }).catch((err) => {
         res.render('error', err);
     });

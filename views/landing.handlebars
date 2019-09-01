@@ -1,55 +1,3 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Creative - Start Bootstrap Theme</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="/assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/assets/css/creative.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Triple Deuces</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> --}}
-
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
@@ -59,15 +7,16 @@
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Taking place on Friday, September 27, 2019 at The Terrace Inn Lounge, 630 Gardner Street, Joliet, IL, 60433.</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Learn More</a>
+          <p class="text-white-75 font-weight-light mb-2">Taking place on Friday, September 27, 2019 at The Terrace Inn Lounge, 630 Gardner Street, Joliet, IL, 60433.</p>
+          <p class="text-white-75 font-weight-light mb-5">Winnings: 1st Place: $400, 2nd Place: $300, 3rd Place: $100</p>
+          <a class="btn btn-primary btn-lg js-scroll-trigger" href="#about">Learn More</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section class="page-section bg-primary about" id="about" style="height:600px;">
+  <section class="page-section bg-primary about" id="about" style="min-height:900px;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -76,7 +25,27 @@
           <p class="text-white-50 mb-4">
             Have fun at our 1st Bid Whist Annual Tournament. Seats are $25 per person ($50 per team) and is non-refundable. You can click below to register. Please note that online registration ends <strong>September 22nd, 2019</strong>. Registration at the gates will be <strong>$30/Participant</strong> ($60 per team).
             </p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#register">Register!</a>
+            <p class="text-white-50 mb-4">Hard Copy Registration & Payment by Postal Mail to be Sent to Al-Hamid Temple #222, Timothy Harris, 1556 Timberwood Ct., Sycamore, IL., 60178 with their team name in memo area of the check or money order.</p>
+                  <h2 class="text-white mt-0">The Rules</h2>
+                  <hr class="divider light my-4">
+            <div class="row mb-2">
+              <div class="col-lg-6 col-sm-12">
+                <ul>
+                  <li class="text-white-50 mb-2">$25 per seat or $50 per team</li>
+                  <li class="text-white-50 mb-2">3 rounds per table</li>
+                  <li class="text-white-50 mb-2">Each round produces a winner and round winners will compete</li>
+                  <li class="text-white-50 mb-2">All players must abide by written rules</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                  <li class="text-white-50 mb-2">All players need to be present by 7:30pm</li>
+                  <li class="text-white-50 mb-2">Seats are allocated in the order that payment is received</li>
+                  <li class="text-white-50 mb-2">No refunds after payment is made</li>
+              </div>
+            </div>
+            <p class="text-white-75 font-weight-light mb-2">$5 spectators fee at the door + 2 drinks minimum</p>
+            <p class="text-white-75 font-weight-light mb-4">Music, pull tab games and 50/50 raffles available + on site security</p>
+          <a class="btn btn-light btn-lg js-scroll-trigger mt-2" href="#register">Register!</a>
         </div>
       </div>
     </div>
@@ -106,11 +75,11 @@
             <div class="form-group col-md-12" id="TeamNameDiv">
                 <label for="TeamName"><i class="text-danger mr-1">*</i>Team Name</label>
                 <input type="text" class="form-control form-control-sm" name="TeamName" id="TeamName" placeholder="Team Name">
+                <small id="TeamNameHelp" class="form-text text-muted">Search your team name to see if already added or else click add</small>
             </div>
               <div class="form-group col-md-12">
                 <label for="Name"><i class="text-danger mr-1">*</i>Name</label>
                 <input type="text" class="form-control form-control-sm" name="Name1" id="Name1" placeholder="First & Last Name">
-                <div class="help-block with-errors"></div>
               </div>
             <div class="form-group col-md-12">
               <label for="PhoneNumber"><i class="text-danger mr-1">*</i>Phone Number</label>
@@ -135,7 +104,7 @@
                 </div>
             </div>
           <div class="row justify-content-center m-5">
-            <button type="submit" class="col-md-4 btn btn-secondary btn-sm">Submit</button>
+            <button type="submit" class="col-md-4 btn btn-secondary btn-lg">Submit</button>
           </div>
         </div>
         </form>
@@ -166,25 +135,3 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  {{!-- <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Triple Deuces</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/assets/js/creative.min.js"></script>
-
-</body>
-
-</html> --}}
