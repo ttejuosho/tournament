@@ -18,7 +18,7 @@ $(document).ready(function() {
                 rowId: 'id',
                 responsive: true,
                 order: [
-                    [2, 'asc']
+                    [3, 'asc']
                 ],
                 columns: [{
                         data: null,
@@ -42,7 +42,8 @@ $(document).ready(function() {
                         data: 'TeamName',
                         className: 'TeamName text-center',
                         visible: false,
-                        searchable: true
+                        searchable: true,
+                        orderable: true
                     },
                     {
                         data: 'EmailAddress',

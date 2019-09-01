@@ -6,5 +6,13 @@ module.exports = function(app) {
           res.json(dbTeamMember);
         });
     });  
-
+    app.get("/api/team-members/:TeamName", (req,res)=>{
+      db.TeamMember.findAll({
+        where: {
+          TeamName: req.params.TeamName
+        }
+      }).then(function(dbTeamMembers) {
+        res.json(dbTeamMembers);
+      });
+    });
 }

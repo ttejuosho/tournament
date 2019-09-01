@@ -44,26 +44,39 @@ router.post('/member/new', (req, res) => {
             }
     }).then((dbTeamMember) => {
         if (dbTeamMember == null) {
+            
             if(req.body.Name2.length > 0){
-                db.TeamMember.create({
-                    Name: req.body.Name2,
-                    TeamName: req.body.TeamName,
-                    EmailAddress: (req.body.EmailAddress2 !== undefined ? req.body.EmailAddress2 : ''),
-                    PhoneNumber: formatPhoneNumber(req.body.PhoneNumber2)
-                });
+                db.TeamMember.count({
+                    where: {
+                      TeamName: req.body.TeamName
+                    }
+                  }).then(function(dbTeamMembers) {
+                    if(dbTeamMembers > 0){
+                        var err = {
+                            error: "The selected team already has at least 1 member. Please press back to add a new team for you and your partner. "
+                     }
+                    return res.render("error", err);
+                    } else {
+                        db.TeamMember.create({
+                            Name: req.body.Name2,
+                            TeamName: req.body.TeamName,
+                            EmailAddress: (req.body.EmailAddress2 !== undefined ? req.body.EmailAddress2 : ''),
+                            PhoneNumber: formatPhoneNumber(req.body.PhoneNumber2)
+                        });
+                        db.TeamMember.create({
+                            Name: req.body.Name1,
+                            TeamName: req.body.TeamName,
+                            EmailAddress: req.body.EmailAddress1,
+                            PhoneNumber: formatPhoneNumber(req.body.PhoneNumber1),
+                            Amount: req.body.Amount
+                        }).then((dbTeamMember) => {
+                            return res.render("added", dbTeamMember);
+                        }).catch((err) => {
+                            res.render('error', err);
+                        });
+                    }
+                  });
             }
-
-            db.TeamMember.create({
-                Name: req.body.Name1,
-                TeamName: req.body.TeamName,
-                EmailAddress: req.body.EmailAddress1,
-                PhoneNumber: formatPhoneNumber(req.body.PhoneNumber1),
-                Amount: req.body.Amount
-            }).then((dbTeamMember) => {
-                return res.render("added", dbTeamMember);
-            }).catch((err) => {
-                res.render('error', err);
-            });
         } else {
             var err = {
                 error: dbTeamMember.Name.toUpperCase() + " already exists in the database"
