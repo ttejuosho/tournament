@@ -1,5 +1,12 @@
+const uuid = require('uuid');
+
 module.exports = function(sequelize, DataTypes) {
     const TeamMember = sequelize.define("TeamMember", {
+        uuid: {
+          primaryKey: true,
+          type: DataTypes.UUID,
+          defaultValue: DataTypes.UUIDV1
+        },
         Name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -31,5 +38,6 @@ module.exports = function(sequelize, DataTypes) {
           defaultValue: 0
         }
     });
+
     return TeamMember;
   };

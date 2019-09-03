@@ -15,20 +15,20 @@ $(document).ready(function() {
                     dataSrc: 'TeamName'
                 },
                 buttons: ['excel', 'pdf', 'print'],
-                rowId: 'id',
+                rowId: 'uuid',
                 responsive: true,
                 order: [
                     [3, 'asc']
                 ],
                 columns: [{
                         data: null,
-                        className: 'id'
+                        className: 'uuid'
                     },
                     {
                         data: 'Name',
                         className: 'Name text-center',
                         render: function(data, type, row, meta) {
-                            return '<a href="/member/' + row.id + '">' + data + '</a>';
+                            return '<a href="/member/' + row.uuid + '">' + data + '</a>';
                         }
                     },
                     {
@@ -60,7 +60,7 @@ $(document).ready(function() {
                         }
                     },
                     {
-                        data: 'id',
+                        data: 'uuid',
                         className: 'text-center',
                         render: function(data, row, type, meta) {
                             return '<a href="/member/' + data + '/update" class="btn btn-warning btn-sm mr-2"><i class="fas fa-edit"></i></a><a href="/member/' + data + '/delete" class="btn btn-danger btn-sm" onclick="return confirm(`Are you sure you want to delete this entry?`)"><i class="fas fa-trash-alt"></i></a>';
@@ -119,7 +119,7 @@ $(document).ready(function() {
                     callback(res);
                 },
                 onChange: function(value) {
-                    $("#searchButton").attr("href", "/member/" + $('#searchTerm')[0].selectize.options[value].id);
+                    $("#searchButton").attr("href", "/member/" + $('#searchTerm')[0].selectize.options[value].uuid);
                 }
             });
 
